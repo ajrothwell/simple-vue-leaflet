@@ -2,15 +2,16 @@
   <map_ :center="[39.952218, -75.163604]"
         :zoom="17"
   >
-    <esri-tiled-map-layer :url="'//tiles.arcgis.com/tiles/fLeGjb7u4uXqeF9q/arcgis/rest/services/CityImagery_2018_3in/MapServer/'" />
-    <esri-tiled-map-layer :url="'//tiles.arcgis.com/tiles/fLeGjb7u4uXqeF9q/arcgis/rest/services/CityImagery_Labels/MapServer'" />
+    <tiledMapLayer :url="'https://{s}.tile.osm.org/{z}/{x}/{y}.png'" />
+    <!-- <esri-tiled-map-layer :url="'//tiles.arcgis.com/tiles/fLeGjb7u4uXqeF9q/arcgis/rest/services/CityImagery_2018_3in/MapServer/'" />
+    <esri-tiled-map-layer :url="'//tiles.arcgis.com/tiles/fLeGjb7u4uXqeF9q/arcgis/rest/services/CityImagery_Labels/MapServer'" /> -->
     <!-- <esri-feature-layer :url="'//services.arcgis.com/fLeGjb7u4uXqeF9q/ArcGIS/rest/services/PWD_PARCELS/FeatureServer/0'"
                         :color="'black'"
                         :weight="2"
                         :fillColor="'blue'"
                         :fillOpacity="0.25"
     /> -->
-    <circle-marker :latlng="[39.952218, -75.163604]"
+    <!-- <circle-marker :latlng="[39.952218, -75.163604]"
                    :radius="8"
                    :color="'black'"
                    :weight="2"
@@ -22,13 +23,14 @@
               :color="'red'"
               :weight="2"
               :fillColor="'blue'"
-    />
+    /> -->
   </map_>
 </template>
 
 <script>
 import Map_ from './components/Map.vue';
-import EsriTiledMapLayer from './components/TiledMapLayer.vue';
+import TiledMapLayer from './components/TiledMapLayer.vue';
+import EsriTiledMapLayer from './components/EsriTiledMapLayer.vue';
 import EsriFeatureLayer from './components/FeatureLayer.vue';
 import CircleMarker from './components/CircleMarker.vue';
 import Polygon_ from './components/Polygon.vue';
@@ -36,6 +38,7 @@ export default {
   name: 'app',
   components: {
     Map_,
+    TiledMapLayer,
     EsriTiledMapLayer,
     EsriFeatureLayer,
     CircleMarker,
