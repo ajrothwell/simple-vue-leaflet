@@ -11,14 +11,13 @@
     props: ['center','zoom'],
     mounted() {
       const map = this.$leafletElement = this.createLeafletElement();
-      // for (let child of this.$children) {
-      //   child.parentMounted(this, child.$props);
-      // }
+      for (let child of this.$children) {
+        child.parentMounted(this, child.$props);
+      }
     },
     methods: {
       createLeafletElement() {
-        const { ...options } = this.$props;
-        return new Map(this.$refs.map, options);
+        return new Map(this.$refs.map, this.$props);
       },
     }
   };

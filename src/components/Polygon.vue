@@ -1,28 +1,14 @@
 <script>
   import { Polygon } from 'leaflet';
-
   export default {
     name: 'Polygon_',
-    props: [
-      'latlngs',
-      'color',
-      'weight',
-      'fillColor',
-    ],
-    mounted() {
-      const leafletElement = this.$leafletElement = this.createLeafletElement();
-    },
-    render(h) {
-      return;
-    },
+    props: ['latlngs', 'color', 'weight', 'fillColor'],
+    render(h) { return; },
+    mounted() { const leafletElement = this.$leafletElement = this.createLeafletElement(); },
     methods: {
       createLeafletElement() {
-        const newPolygon = new Polygon(this.$props.latlngs, {
-          color: this.$props.color,
-          weight: this.$props.weight,
-          fillColor: this.$props.fillColor,
-      });
-        return newPolygon;
+        const { latlngs, ...options } = this.$props;
+        return new Polygon(latlngs, options);
       },
       parentMounted(parent) {
         const map = parent.$leafletElement;

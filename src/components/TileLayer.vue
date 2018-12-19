@@ -1,16 +1,18 @@
 <script>
-  import { tiledMapLayer as TiledMapLayer } from 'esri-leaflet';
+  import { tileLayer as TileLayer } from 'leaflet';
   export default {
-    name: 'EsriTiledMapLayer',
+    name: 'TileLayer',
     props: ['url'],
     render(h) { return; },
     mounted() {
-      const leafletElement = this.$leafletElement = this.createLeafletElement()
+      const leafletElement = this.$leafletElement = this.createLeafletElement();
+      // const map = this.$parent.$leafletElement;
+      // this.$leafletElement.addTo(map);
     },
     methods: {
       createLeafletElement() {
         const { ...options } = this.$props;
-        return new TiledMapLayer(options);
+        return new TileLayer(options.url);
       },
       parentMounted(parent) {
         const map = parent.$leafletElement;

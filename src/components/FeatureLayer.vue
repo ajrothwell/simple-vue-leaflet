@@ -3,12 +3,12 @@
   export default {
     name: 'EsriFeatureLayer',
     props: ['url', 'color', 'fillColor', 'fillOpacity', 'weight'],
-    created() { const leafletElement = this.$leafletElement = this.createLeafletElement(); },
     render(h) { return; },
+    created() { const leafletElement = this.$leafletElement = this.createLeafletElement(); },
     methods: {
       createLeafletElement() {
-        const props = Object.assign({}, this.$props);
-        return new FeatureLayer(props);
+        const { ...options } = this.$props;
+        return new FeatureLayer(options);
       },
       parentMounted(parent) {
         const map = parent.$leafletElement;
