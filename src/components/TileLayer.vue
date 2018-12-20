@@ -14,10 +14,10 @@
         const { ...options } = this.$props;
         return new TileLayer(options.url);
       },
-      parentMounted(parent) {
-        const map = parent.$leafletElement;
-        this.$leafletElement.addTo(map);
-      }
+      // parentMounted(parent) {
+      //   const map = parent.$leafletElement;
+      //   this.$leafletElement.addTo(map);
+      // }
     }
   };
 </script>

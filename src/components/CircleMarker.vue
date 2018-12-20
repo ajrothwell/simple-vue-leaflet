@@ -6,15 +6,15 @@
     render(h) { return; },
     mounted() {
       const leafletElement = this.$leafletElement = this.createLeafletElement();
-      const map = this.$parent.$leafletElement;
-      if (map) {
-        leafletElement.addTo(map);
-      }
+      // const map = this.$parent.$leafletElement;
+      // if (map) {
+      //   leafletElement.addTo(map);
+      // }
     },
-    destroyed() {
-      const map = this.$parent.$leafletElement;
-      this.$leafletElement.removeFrom(map);
-    },
+    // destroyed() {
+    //   const map = this.$parent.$leafletElement;
+    //   this.$leafletElement.removeFrom(map);
+    // },
     methods: {
       createLeafletElement() {
         const { latlng, ...options } = this.$props;
