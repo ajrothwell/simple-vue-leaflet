@@ -1,4 +1,4 @@
-# simple-vue-leaflet
+# vue-leaflet-01-simple-example
 
 ## Project setup
 ```
