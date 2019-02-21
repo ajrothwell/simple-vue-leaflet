@@ -11,9 +11,9 @@
     props: ['center','zoom'],
     mounted() {
       const map = this.$leafletElement = this.createLeafletElement();
-      // for (let child of this.$children) {
-      //   child.parentMounted(this, child.$props);
-      // }
+      for (let child of this.$children) {
+        child.parentMounted(this, child.$props);
+      }
     },
     methods: {
       createLeafletElement() {
